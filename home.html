@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; 
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        header,footer {
+            background: linear-gradient(to right, darkgreen, darkgreen);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center; /* Center the navbar */
+            background-color: #333; /* Background color */
+            padding: 10px 0; /* Padding */
+        }
+        
+        .navbar ul {
+            list-style-type: none; /* Remove bullets */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+            display: flex; /* Flexbox for horizontal layout */
+        }
+        
+        .navbar li {
+            margin: 0 20px; /* Space between items */
+        }
+        
+        .navbar a {
+            text-decoration: none; /* Remove underline */
+            color: white; /* Text color */
+            font-weight: bold; /* Bold text */
+        }
+        
+        .navbar a:hover {
+            color: #ddd; /* Change color on hover */
+        }
+       
+        .container {
+            display: flex;
+            flex-grow: 1;
+        }
+        .sidebar {
+            width: 200px; 
+            background-color: #f4f4f4;
+            padding: 15px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .main-content {
+            flex: 1; 
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .carousel {
+            position: relative;
+            max-width: 100%; 
+            margin: auto;
+        }
+        .carousel-images {
+    display: none; 
+    width: 100%; 
+    max-width: 300px; 
+    height: auto;
+        }
+
+        .active {
+            display: block; 
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Home</h1>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="my collections.html">My collections</a></li>
+            <li><a href="jawa.html">Jawa</a></li>
+           
+            
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Additional resources</h2>
+            <h3>Video</h3>
+            <video controls width="180">
+                <source src="./images/WhatsApp Video 2024-11-04 at 19.41.29_af98bf51.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        
+            <h3>Audio</h3>
+<div style="width: 200px;">
+    <audio controls style="width: 100%;">
+        <source src="./images/WhatsApp Audio 2024-11-02 at 19.20.40_983ef723.mp3" type="audio/ogg">
+        <source src="./images/WhatsApp Audio 2024-11-02 at 19.20.40_983ef723.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+    <p>pdf</p>
+    <a href="./images/cbm-rulesofroad.pdf" target="_blank">Rules of the Road pdf</a>
+
+</div>
+ <p> Other sites</p>
+
+            <ul>
+                <li><a href="https://www.behance.net/search/projects/valentino%20rossi%20vr46">Vr-46</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <h1>Role Model</h1>
+            <div class="carousel">
+                <img class="carousel-images active" src="./images/vr1.jpg" alt="Image 1">
+                <img class="carousel-images" src="./images/vr2.jpg" alt="Image 2">
+                <img class="carousel-images" src="./images/vr3.jpg" alt="Image 3">
+                
+                <div class="carousel-buttons">
+                    <button class="carousel-button" onclick="changeSlide(-1)">&#10094;</button>
+                    <button class="carousel-button" onclick="changeSlide(1)">&#10095;</button>
+                </div>
+            </div>
+            <p>
+                The VR46 is associated with the legendary MotoGP racer Valentino Rossi, known for his incredible skills and charisma on the track. While "VR46" can refer to various products, including merchandise and teams, here's a focus on the details regarding Valentino Rossi as a racer
+               </p>
+       <p>Retirement
+        Valentino Rossi announced his retirement from professional racing at the end of the 2021 MotoGP season, concluding a storied career that has left a lasting impact on the sport.
+
+       </p>
+        </div>
+
+        <div class="sidebar">
+            <h2></h2>
+           <p>Legacy and Impact
+            Fanbase: Rossi has one of the largest fanbases in motorsport history, with followers around the world.
+            VR46 Brand: He established the VR46 brand, which includes merchandise, a clothing line, and a racing academy that trains young riders.
+            Cultural Icon: Beyond racing, Rossi is regarded as a cultural icon in Italy and the motorsport community, known for his charisma and personality.
+            </p>
+            <h2><a href="my collections.html">My collections</a></h2>
+            <br>
+            <h2><a href="jawa.html">Jawa</a></h2>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Website. All rights reserved.&bull; &hearts;</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-images');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1; 
+            } else if (currentSlide >= slides.length) {
+                currentSlide = 0; 
+            }
+            showSlide(currentSlide);
+        }
+ 
+        setInterval(() => changeSlide(1), 5000);
+    </script>
+
+</body>
+</html>
